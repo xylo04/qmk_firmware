@@ -145,6 +145,14 @@ extern uint32_t default_layer_state;
     #include "oled_driver.h"
 #endif
 
+#ifdef DYNAMIC_KEYMAP_ENABLE
+#   include "dynamic_keymap.h"
+#endif
+
+ #ifdef RAW_ENABLE
+#   include "raw_hid.h"
+#endif
+
 // Function substitutions to ease GPIO manipulation
 #if defined(__AVR__)
     typedef uint8_t pin_t;

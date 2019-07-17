@@ -294,6 +294,14 @@ ifeq ($(strip $(VELOCIKEY_ENABLE)), yes)
     SRC += $(QUANTUM_DIR)/velocikey.c
 endif
 
+ifeq ($(strip $(ORYX_ENABLE)), yes)
+  OPT_DEFS += -DORYX_ENABLE
+  OPT_DEFS += -DORYX_PROTOCOL_VERSION=1
+  SRC += $(QUANTUM_DIR)/oryx.c
+  DYNAMIC_KEYMAP_ENABLE=yes
+  RAW_ENABLE = yes
+endif
+
 ifeq ($(strip $(DYNAMIC_KEYMAP_ENABLE)), yes)
     OPT_DEFS += -DDYNAMIC_KEYMAP_ENABLE
     SRC += $(QUANTUM_DIR)/dynamic_keymap.c

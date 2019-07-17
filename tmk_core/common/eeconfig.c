@@ -50,6 +50,7 @@ void eeconfig_init_quantum(void) {
 #ifdef EECONFIG_RGB_MATRIX
   eeprom_update_dword(EECONFIG_RGB_MATRIX,    0);
 #endif
+  eeprom_update_byte(EECONFIG_ORYX_VERSION, ORYX_PROTOCOL_VERSION);
 
   eeconfig_init_kb();
 }
@@ -90,7 +91,7 @@ void eeconfig_disable(void)
  */
 bool eeconfig_is_enabled(void)
 {
-    return (eeprom_read_word(EECONFIG_MAGIC) == EECONFIG_MAGIC_NUMBER);
+    return (eeprom_read_word(EECONFIG_MAGIC) == EECONFIG_MAGIC_NUMBER && eeprom_read_byte(EECONFIG_ORYX_VERSION) == ORYX_PROTOCOL_VERSION);
 }
 
 /** \brief eeconfig is disabled

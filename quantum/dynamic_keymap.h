@@ -17,6 +17,8 @@
 
 #include <stdint.h>
 #include <stdbool.h>
+#include "quantum.h"
+#include "eeprom.h"
 
 uint8_t dynamic_keymap_get_layer_count(void);
 void *dynamic_keymap_key_to_eeprom_address(uint8_t layer, uint8_t row, uint8_t column);
@@ -60,4 +62,3 @@ void dynamic_keymap_macro_set_buffer( uint16_t offset, uint16_t size, uint8_t *d
 void dynamic_keymap_macro_reset(void);
 
 void dynamic_keymap_macro_send( uint8_t id );
-
