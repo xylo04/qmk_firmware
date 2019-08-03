@@ -249,7 +249,7 @@ static bool rgb_matrix_none(effect_params_t* params) {
 
 static uint8_t rgb_last_enable = UINT8_MAX;
 static uint8_t rgb_last_effect = UINT8_MAX;
-static effect_params_t rgb_effect_params = { 0, 0xFF };
+effect_params_t rgb_effect_params = { 0, 0xFF };
 static rgb_task_states rgb_task_state = SYNCING;
 
 static void rgb_task_timers(void) {
